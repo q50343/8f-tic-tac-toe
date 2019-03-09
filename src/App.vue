@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <start v-if='page === 1' @start='start'></start>
+    <game v-if='page === 2' @reStart='reStart'></game>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import start from './components/start.vue'
+import game from './components/game.vue'
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    start,
+    game
+  },
+  data(){
+    return{
+      page:1,
+    }
+  },
+  methods:{
+    start(){
+      this.page = 2
+    },
+    reStart(){
+      this.page = 1
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+Html,body{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+}
+*{
+  box-sizing: border-box;
+}
+#app{
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 540px) { 
+  #app{
+    height: 100vh;
+  }
 }
 </style>
