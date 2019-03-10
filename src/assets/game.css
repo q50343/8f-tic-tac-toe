@@ -411,3 +411,14 @@
         height: 120px;
     }
 }
+@media screen and (max-height: 700px) and (max-width: 380px){ 
+    .header{
+        margin-top: 1vh;
+    }
+    .turn{
+        top: calc(1vh + 80px)
+    }
+    .board{
+        margin-bottom: 20px;
+    }
+}
