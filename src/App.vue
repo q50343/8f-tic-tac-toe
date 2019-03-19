@@ -44,10 +44,6 @@ Html,body{
 #app{
   width: 100%;
   height: 100%;
-}
-@media screen and (max-width: 540px) { 
-  #app{
-    height: 100vh;
-  }
+  min-height: 100vh
 }
 </style>
